@@ -1,0 +1,11 @@
+# Versions used in the original run (Python 3.12.3).
+# pypdf's version was not recorded, so it is left unpinned.
+langchain==1.4.2
+langchain-openai==1.6.6
+langchain-community==0.4.2
+langchain-classic==1.0.8
+langchain-text-splitters==1.1.2
+faiss-cpu==1.15.1
+tiktoken==0.14.0
+python-dotenv==1.2.3
+pypdf
