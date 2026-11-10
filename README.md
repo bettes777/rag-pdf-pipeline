@@ -2,8 +2,6 @@
 
 A retrieval-augmented generation (RAG) pipeline that answers questions about long policy documents and shows which passages each answer came from. It was built in Python with LangChain, FAISS, and Azure OpenAI.
 
-Built as a course-end project for the **Post Graduate Program in Applied Agentic AI** (Virginia Tech and Simplilearn).
-
 ## The problem
 
 Policy reports on AI run to dozens of pages each, and a general-purpose LLM hasn't read them, especially recent ones. This project grounds an LLM's answers in a specific document set: it retrieves the most relevant passages at question time and returns them alongside the answer, so the answer can be checked against its sources.
