@@ -74,7 +74,7 @@ cp .env.example .env             # then add your own credentials to .env
 
 Download the three PDFs into `data/` (see [`data/README.md`](data/README.md)), then open `rag_pipeline.ipynb` and run the cells in order. Embedding takes about 15 minutes because of the batching.
 
-The saved outputs in the notebook are from the original run. The notebook was originally run in VS Code against an Azure OpenAI gateway provided by the course, which is no longer used here; you'll need your own credentials.
+The saved outputs in the notebook are from the original run. 
 
 ## Tech stack
 
