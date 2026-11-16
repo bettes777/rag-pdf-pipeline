@@ -4,7 +4,7 @@ A retrieval-augmented generation (RAG) pipeline that answers questions about lon
 
 ## The problem
 
-Policy reports on AI run to dozens of pages each, and a general-purpose LLM hasn't read them, especially recent ones. This project grounds an LLM's answers in a specific document set: it retrieves the most relevant passages at question time and returns them alongside the answer, so the answer can be checked against its sources.
+Policy reports on AI run to dozens of pages each, and a general-purpose LLM may not have seen them, especially recent ones, and cannot show where an answer came from. This project grounds an LLM's answers in a specific document set: it retrieves the most relevant passages at question time and returns them alongside the answer, so the answer can be checked against its sources.
 
 ## Documents
 
@@ -49,7 +49,7 @@ The full write-up, including per-document metrics, is in [`report/report.md`](re
 
 - **Rate limits.** Sending all 309 chunks to the embedding endpoint at once failed with rate-limit errors. Embedding in batches of 5 with a 15-second pause between batches worked, taking about 15 minutes.
 - **Separating auth errors from rate limits.** Intermittent `401` errors made it unclear whether the key or the request volume was the problem. A 2-chunk test call showed the key was valid, which pointed to rate limiting.
-- **Provider change.** The brief specified the OpenAI API, but the working credentials were for Azure OpenAI, so the pipeline uses LangChain's Azure classes. The RAG logic is the same either way.
+- **Provider change.** The original plan was to use the OpenAI API, but the working credentials were for Azure OpenAI, so the pipeline uses LangChain's Azure classes. The RAG logic is the same either way.
 
 ## What I'd improve next
 
@@ -64,7 +64,7 @@ The full write-up, including per-document metrics, is in [`report/report.md`](re
 Requires Python 3.12 and access to an Azure OpenAI resource with a chat deployment and an embedding deployment.
 
 ```bash
-git clone https://github.com/<your-username>/rag-pdf-pipeline.git
+git clone https://github.com/bettes777/rag-pdf-pipeline.git
 cd rag-pdf-pipeline
 python -m venv .venv
 source .venv/bin/activate        # Windows: .venv\Scripts\activate
